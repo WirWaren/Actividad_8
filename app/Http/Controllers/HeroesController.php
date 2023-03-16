@@ -69,10 +69,12 @@ class HeroesController extends Controller
      * @param  \App\Models\Heroes  $heroes
      * @return \Illuminate\Http\Response
      */
-    public function edit(Heroes $heroes)
+    public function edit($id)
     {
         //
-        return view('Heroes.edit');
+        $heroes=Heroes::findOrFail($id);
+
+        return view('Heroes.edit', compact('heroes'));
     }
 
     /**
@@ -82,9 +84,15 @@ class HeroesController extends Controller
      * @param  \App\Models\Heroes  $heroes
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Heroes $heroes)
+    public function update(Request $request, $id)
     {
         //
+        $datosHeroes = request()->except(['_token','_method']);
+        Heroes::where('id','=',$id)->update($datosHeroes);
+
+        $heroes=Heroes::findOrFail($id);
+        return view('Heroes.edit', compact('heroes'));
+
     }
 
     /**

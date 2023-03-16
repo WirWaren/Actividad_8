@@ -1,4 +1,5 @@
 Mostrar la lista de heroes con sus datos.
+<a href="{{ url('Heroes/create') }}"> Registrar nuevo heroe</a>
 <table class="table table-light">
     <thead class="thead-light">
         <tr>
@@ -17,7 +18,12 @@ Mostrar la lista de heroes con sus datos.
         <tr>
             <td>
                 <td>{{$Heroes->id}}</td>
-                <td>{{$Heroes->Foto}}</td>
+                
+                <td>   
+                     
+                </td>
+
+
                 <td>{{$Heroes->Nombre}}</td>
                 <td>{{$Heroes->Nombre_Real}}</td>
                 <td>{{$Heroes->Apellido}}</td>
