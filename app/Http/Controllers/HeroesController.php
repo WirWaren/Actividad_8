@@ -15,7 +15,8 @@ class HeroesController extends Controller
     public function index()
     {
         //
-        return view('Heroes.index');
+        $datos['heroes']=Heroes::paginate(5);
+        return view('Heroes.index',$datos );
     }
 
     /**
@@ -71,6 +72,7 @@ class HeroesController extends Controller
     public function edit(Heroes $heroes)
     {
         //
+        return view('Heroes.edit');
     }
 
     /**
@@ -91,8 +93,10 @@ class HeroesController extends Controller
      * @param  \App\Models\Heroes  $heroes
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Heroes $heroes)
+    public function destroy($id)
     {
         //
+        Heroes::destroy($id);
+        return  redirect('Heroes');
     }
 }
