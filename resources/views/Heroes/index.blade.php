@@ -1,5 +1,9 @@
-Mostrar la lista de heroes con sus datos.
+@extends('layouts.app')
+@section('content')
+<div class="container">
+
 <a href="{{ url('Heroes/create') }}"> Registrar nuevo heroe</a>
+
 <table class="table table-light">
     <thead class="thead-light">
         <tr>
@@ -52,3 +56,5 @@ Mostrar la lista de heroes con sus datos.
     </tbody>
 
 </table>
+</div>
+@endsection
