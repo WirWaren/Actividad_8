@@ -9,6 +9,6 @@
 @include('Heroes.form');
 
 </form>
-</div>
+</div> 
 @endsection
 
