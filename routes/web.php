@@ -26,7 +26,7 @@ Route::get('/Heroes/create',[HeroesController::class,'create']);
 */
 
 Route::resource('Heroes',HeroesController::class);
-Auth::routes();
+Auth::routes(['register'=>false,'reset'=>false]);
 
 
 Route::get('/home', [HeroesController::class, 'index'])->name('home');

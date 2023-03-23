@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
 
-<a href="{{ url('Heroes/create') }}"> Registrar nuevo heroe</a>
+<a href="{{ url('Heroes/create') }}" class="btn btn-success" > Registrar nuevo heroe</a>
 
 <table class="table table-light">
     <thead class="thead-light">
@@ -33,15 +33,15 @@
                 <td>{{$Heroes->Apellido}}</td>
                 <td>
                     
-                <a href="{{ url('/Heroes/'.$Heroes->id.'/edit') }}">
+                <a href="{{ url('/Heroes/'.$Heroes->id.'/edit') }}" class="btn btn-warning" >
                 Editar
                 </a>
                  | 
 
-                <form action="{{ url('/Heroes/'.$Heroes->id ) }}" method="post">
+                <form action="{{ url('/Heroes/'.$Heroes->id ) }}"  class="d-inline " method="post">
                 @csrf 
                 {{ method_field('DELETE') }}
-                <input type="submit" onclick="return confirm('¿Deseas borrar?')" 
+                <input class="btn btn-danger" type="submit" onclick="return confirm('¿Deseas borrar?')" 
                 value="Borrar">
 
                 </form>
