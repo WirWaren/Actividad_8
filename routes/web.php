@@ -35,7 +35,7 @@ Route::prefix('auth')->group(function () {
 
     Route::get('/', [HeroesController::class, 'index'])->name('home');
     
-});
+}); 
 
     
     
